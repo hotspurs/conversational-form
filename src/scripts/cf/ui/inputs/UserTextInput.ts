@@ -425,7 +425,7 @@ namespace cf {
 				this.shiftIsDown = true;
 
 			// prevent textarea line breaks
-			if(event.keyCode == Dictionary.keyCodes["enter"] && !event.shiftKey){
+			if(event.keyCode == Dictionary.keyCodes["enter"] && event.shiftKey){
 				event.preventDefault();
 			}
 		}
@@ -480,8 +480,8 @@ namespace cf {
 
 			const value: FlowDTO = this.getFlowDTO();
 
-			if((event.keyCode == Dictionary.keyCodes["enter"] && !event.shiftKey) || event.keyCode == Dictionary.keyCodes["space"]){
-				if(event.keyCode == Dictionary.keyCodes["enter"] && this.active){
+			if((event.keyCode == Dictionary.keyCodes["enter"] && event.shiftKey) || event.keyCode == Dictionary.keyCodes["space"]){
+				if(event.keyCode == Dictionary.keyCodes["enter"] && event.shiftKey && this.active){
 					event.preventDefault();
 					this.onEnterOrSubmitButtonSubmit();
 				}else{

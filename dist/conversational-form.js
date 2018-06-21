@@ -282,7 +282,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var Helpers = /** @class */ (function () {
+    var Helpers = (function () {
         function Helpers() {
         }
         Helpers.lerp = function (norm, min, max) {
@@ -355,15 +355,15 @@ var cf;
             return destination;
         };
         ;
-        Helpers.caniuse = {
-            fileReader: function () {
-                if (window.File && window.FileReader && window.FileList && window.Blob)
-                    return true;
-                return false;
-            }
-        };
         return Helpers;
     }());
+    Helpers.caniuse = {
+        fileReader: function () {
+            if (window.File && window.FileReader && window.FileList && window.Blob)
+                return true;
+            return false;
+        }
+    };
     cf.Helpers = Helpers;
 })(cf || (cf = {}));
 
@@ -371,7 +371,7 @@ var cf;
 var cf;
 (function (cf) {
     // interface
-    var EventDispatcher = /** @class */ (function () {
+    var EventDispatcher = (function () {
         function EventDispatcher(cfRef) {
             if (cfRef === void 0) { cfRef = null; }
             this._cf = cfRef;
@@ -405,7 +405,7 @@ var cf;
 var cf;
 (function (cf) {
     // interface
-    var TagsParser = /** @class */ (function () {
+    var TagsParser = (function () {
         function TagsParser() {
         }
         TagsParser.parseTag = function (element) {
@@ -477,7 +477,7 @@ var cf;
 var cf;
 (function (cf) {
     // class
-    var BasicElement = /** @class */ (function () {
+    var BasicElement = (function () {
         function BasicElement(options) {
             this.eventTarget = options.eventTarget;
             this.cfReference = options.cfReference;
@@ -538,7 +538,7 @@ var cf;
         READY: "cf-control-element-progress-READY",
     };
     // class
-    var ControlElement = /** @class */ (function (_super) {
+    var ControlElement = (function (_super) {
         __extends(ControlElement, _super);
         function ControlElement(options) {
             var _this = _super.call(this, options) || this;
@@ -728,7 +728,7 @@ var cf;
         ON_RESIZE: "cf-on-control-elements-resize",
         CHANGED: "cf-on-control-elements-changed"
     };
-    var ControlElements = /** @class */ (function () {
+    var ControlElements = (function () {
         function ControlElements(options) {
             this.animateInFromReponseTimer = 0;
             this.ignoreKeyboardInput = false;
@@ -1389,7 +1389,7 @@ var cf;
 // namespace
 var cf;
 (function (cf) {
-    var ScrollController = /** @class */ (function () {
+    var ScrollController = (function () {
         function ScrollController(options) {
             this.listWidth = 0;
             this.visibleAreaWidth = 0;
@@ -1550,9 +1550,9 @@ var cf;
             this.max = (this.listWidth - this.visibleAreaWidth) * -1;
             this.render();
         };
-        ScrollController.accerlation = 0.1;
         return ScrollController;
     }());
+    ScrollController.accerlation = 0.1;
     cf.ScrollController = ScrollController;
 })(cf || (cf = {}));
 
@@ -1561,7 +1561,7 @@ var cf;
 var cf;
 (function (cf) {
     // class
-    var Dictionary = /** @class */ (function () {
+    var Dictionary = (function () {
         function Dictionary(options) {
             // can be overwrittenMicrophone error
             this.data = {
@@ -1670,19 +1670,19 @@ var cf;
             }
             return newData;
         };
-        Dictionary.keyCodes = {
-            "left": 37,
-            "right": 39,
-            "down": 40,
-            "up": 38,
-            "backspace": 8,
-            "enter": 13,
-            "space": 32,
-            "shift": 16,
-            "tab": 9,
-        };
         return Dictionary;
     }());
+    Dictionary.keyCodes = {
+        "left": 37,
+        "right": 39,
+        "down": 40,
+        "up": 38,
+        "backspace": 8,
+        "enter": 13,
+        "space": 32,
+        "shift": 16,
+        "tab": 9,
+    };
     cf.Dictionary = Dictionary;
 })(cf || (cf = {}));
 
@@ -1713,7 +1713,7 @@ var cf;
         ORIGINAL_ELEMENT_CHANGED: "cf-tag-dom-element-changed"
     };
     // class
-    var Tag = /** @class */ (function () {
+    var Tag = (function () {
         function Tag(options) {
             this.domElement = options.domElement;
             this.initialDefaultValue = this.domElement.value || this.domElement.getAttribute("value") || "";
@@ -2193,7 +2193,7 @@ var cf;
 var cf;
 (function (cf) {
     // class
-    var TagGroup = /** @class */ (function () {
+    var TagGroup = (function () {
         function TagGroup(options) {
             this.elements = options.elements;
             // set wrapping element
@@ -2481,7 +2481,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var InputTag = /** @class */ (function (_super) {
+    var InputTag = (function (_super) {
         __extends(InputTag, _super);
         function InputTag(options) {
             var _this = _super.call(this, options) || this;
@@ -2545,7 +2545,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var SelectTag = /** @class */ (function (_super) {
+    var SelectTag = (function (_super) {
         __extends(SelectTag, _super);
         function SelectTag(options) {
             var _this = _super.call(this, options) || this;
@@ -2667,7 +2667,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var ButtonTag = /** @class */ (function (_super) {
+    var ButtonTag = (function (_super) {
         __extends(ButtonTag, _super);
         function ButtonTag(options) {
             var _this = _super.call(this, options) || this;
@@ -2700,7 +2700,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var OptionTag = /** @class */ (function (_super) {
+    var OptionTag = (function (_super) {
         __extends(OptionTag, _super);
         function OptionTag() {
             return _super !== null && _super.apply(this, arguments) || this;
@@ -2768,7 +2768,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var CfRobotMessageTag = /** @class */ (function (_super) {
+    var CfRobotMessageTag = (function (_super) {
         __extends(CfRobotMessageTag, _super);
         function CfRobotMessageTag(options) {
             var _this = _super.call(this, options) || this;
@@ -2799,7 +2799,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var Button = /** @class */ (function (_super) {
+    var Button = (function (_super) {
         __extends(Button, _super);
         function Button(options) {
             var _this = _super.call(this, options) || this;
@@ -2883,7 +2883,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var RadioButton = /** @class */ (function (_super) {
+    var RadioButton = (function (_super) {
         __extends(RadioButton, _super);
         function RadioButton() {
             return _super !== null && _super.apply(this, arguments) || this;
@@ -2945,7 +2945,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var CheckboxButton = /** @class */ (function (_super) {
+    var CheckboxButton = (function (_super) {
         __extends(CheckboxButton, _super);
         function CheckboxButton() {
             return _super !== null && _super.apply(this, arguments) || this;
@@ -3008,7 +3008,7 @@ var cf;
         CLICK: "cf-option-button-click"
     };
     // class
-    var OptionButton = /** @class */ (function (_super) {
+    var OptionButton = (function (_super) {
         __extends(OptionButton, _super);
         function OptionButton() {
             var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3072,7 +3072,7 @@ var cf;
     // interface
     // class
     // builds x OptionsButton from the registered SelectTag
-    var OptionsList = /** @class */ (function () {
+    var OptionsList = (function () {
         function OptionsList(options) {
             this.context = options.context;
             this.eventTarget = options.eventTarget;
@@ -3169,7 +3169,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var UploadFileUI = /** @class */ (function (_super) {
+    var UploadFileUI = (function (_super) {
         __extends(UploadFileUI, _super);
         function UploadFileUI(options) {
             var _this = _super.call(this, options) || this;
@@ -3341,7 +3341,7 @@ var cf;
         TERMNIAL_ERROR: "cf-microphone-bridge-terminal-error"
     };
     // class
-    var MicrophoneBridge = /** @class */ (function () {
+    var MicrophoneBridge = (function () {
         function MicrophoneBridge(options) {
             this.currentTextResponse = "";
             this._hasUserMedia = false;
@@ -3582,7 +3582,7 @@ var cf;
         return MicrophoneBridge;
     }());
     cf.MicrophoneBridge = MicrophoneBridge;
-    var SimpleEqualizer = /** @class */ (function () {
+    var SimpleEqualizer = (function () {
         function SimpleEqualizer(options) {
             var _this = this;
             this.maxBorderWidth = 0;
@@ -3661,7 +3661,7 @@ var cf;
         CHANGE: "userinput-submit-button-change-value"
     };
     // class
-    var UserInputSubmitButton = /** @class */ (function () {
+    var UserInputSubmitButton = (function () {
         function UserInputSubmitButton(options) {
             this._active = true;
             this.eventTarget = options.eventTarget;
@@ -3828,7 +3828,7 @@ var __extends = (this && this.__extends) || (function () {
 var cf;
 (function (cf) {
     // interface
-    var UserInputElement = /** @class */ (function (_super) {
+    var UserInputElement = (function (_super) {
         __extends(UserInputElement, _super);
         function UserInputElement(options) {
             var _this = _super.call(this, options) || this;
@@ -3962,11 +3962,11 @@ var cf;
                 this.setFocusOnInput();
             }
         };
-        UserInputElement.ERROR_TIME = 2000;
-        UserInputElement.preventAutoFocus = false;
-        UserInputElement.hideUserInputOnNoneTextInput = false;
         return UserInputElement;
     }(cf.BasicElement));
+    UserInputElement.ERROR_TIME = 2000;
+    UserInputElement.preventAutoFocus = false;
+    UserInputElement.hideUserInputOnNoneTextInput = false;
     cf.UserInputElement = UserInputElement;
     cf.UserInputEvents = {
         SUBMIT: "cf-input-user-input-submit",
@@ -3999,7 +3999,7 @@ var cf;
 (function (cf) {
     // interface
     // class
-    var UserTextInput = /** @class */ (function (_super) {
+    var UserTextInput = (function (_super) {
         __extends(UserTextInput, _super);
         function UserTextInput(options) {
             var _this = _super.call(this, options) || this;
@@ -4330,7 +4330,7 @@ var cf;
             if (event.keyCode == cf.Dictionary.keyCodes["shift"])
                 this.shiftIsDown = true;
             // prevent textarea line breaks
-            if (event.keyCode == cf.Dictionary.keyCodes["enter"] && !event.shiftKey) {
+            if (event.keyCode == cf.Dictionary.keyCodes["enter"] && event.shiftKey) {
                 event.preventDefault();
             }
         };
@@ -4376,8 +4376,8 @@ var cf;
             if (this.el.hasAttribute("disabled"))
                 return;
             var value = this.getFlowDTO();
-            if ((event.keyCode == cf.Dictionary.keyCodes["enter"] && !event.shiftKey) || event.keyCode == cf.Dictionary.keyCodes["space"]) {
-                if (event.keyCode == cf.Dictionary.keyCodes["enter"] && this.active) {
+            if ((event.keyCode == cf.Dictionary.keyCodes["enter"] && event.shiftKey) || event.keyCode == cf.Dictionary.keyCodes["space"]) {
+                if (event.keyCode == cf.Dictionary.keyCodes["enter"] && event.shiftKey && this.active) {
                     event.preventDefault();
                     this.onEnterOrSubmitButtonSubmit();
                 }
@@ -4543,7 +4543,7 @@ var cf;
         USER_ANSWER_CLICKED: "cf-on-user-answer-clicked"
     };
     // class
-    var ChatResponse = /** @class */ (function (_super) {
+    var ChatResponse = (function (_super) {
         __extends(ChatResponse, _super);
         function ChatResponse(options) {
             var _this = _super.call(this, options) || this;
@@ -4856,9 +4856,9 @@ var cf;
         ChatResponse.prototype.getTemplate = function () {
             return "<cf-chat-response class=\"" + (this.isRobotResponse ? "robot" : "user") + "\">\n\t\t\t\t<thumb><span></span></thumb>\n\t\t\t\t<text></text>\n\t\t\t</cf-chat-response>";
         };
-        ChatResponse.THINKING_MARKUP = "<p class='show'><thinking><span>.</span><span>.</span><span>.</span></thinking></p>";
         return ChatResponse;
     }(cf.BasicElement));
+    ChatResponse.THINKING_MARKUP = "<p class='show'><thinking><span>.</span><span>.</span><span>.</span></thinking></p>";
     cf.ChatResponse = ChatResponse;
 })(cf || (cf = {}));
 
@@ -4883,7 +4883,7 @@ var cf;
         CHATLIST_UPDATED: "cf-chatlist-updated"
     };
     // class
-    var ChatList = /** @class */ (function (_super) {
+    var ChatList = (function (_super) {
         __extends(ChatList, _super);
         function ChatList(options) {
             var _this = _super.call(this, options) || this;
@@ -5143,7 +5143,7 @@ var cf;
         FLOW_UPDATE: "cf-flow-update",
     };
     // class
-    var FlowManager = /** @class */ (function () {
+    var FlowManager = (function () {
         function FlowManager(options) {
             this.stopped = false;
             this.maxSteps = 0;
@@ -5413,9 +5413,9 @@ var cf;
                 }));
             }, 0);
         };
-        FlowManager.STEP_TIME = 1000;
         return FlowManager;
     }());
+    FlowManager.STEP_TIME = 1000;
     cf.FlowManager = FlowManager;
 })(cf || (cf = {}));
 
@@ -5435,7 +5435,7 @@ var cf;
 /// <reference path="interfaces/IUserInterfaceOptions.ts"/>
 var cf;
 (function (cf_1) {
-    var ConversationalForm = /** @class */ (function () {
+    var ConversationalForm = (function () {
         function ConversationalForm(options) {
             this.version = "0.9.81";
             this.cdnPath = "https://cdn.jsdelivr.net/gh/space10-community/conversational-form@{version}/dist/";
@@ -5918,12 +5918,12 @@ var cf;
                 cf.ConversationalForm.hasAutoInstantiated = true;
             }
         };
-        ConversationalForm.animationsEnabled = true;
-        ConversationalForm.illustrateAppFlow = true;
-        ConversationalForm.suppressLog = true;
-        ConversationalForm.hasAutoInstantiated = false;
         return ConversationalForm;
     }());
+    ConversationalForm.animationsEnabled = true;
+    ConversationalForm.illustrateAppFlow = true;
+    ConversationalForm.suppressLog = true;
+    ConversationalForm.hasAutoInstantiated = false;
     cf_1.ConversationalForm = ConversationalForm;
 })(cf || (cf = {}));
 if (document.readyState == "complete") {

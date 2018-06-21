@@ -26,6 +26,6 @@
     "gulp-util": "*",
     "prismjs": "^1.9.0",
     "stream": "*",
-    "typescript": "*"
+    "typescript": "2.3.2"
   }
 }
